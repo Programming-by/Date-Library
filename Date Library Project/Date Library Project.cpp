@@ -3,6 +3,7 @@
 #include <string>
 #include "clsDate.h"
 #include "clsString.h"
+#include "clsPeriod.h"
 
 using namespace std;
 
@@ -20,6 +21,21 @@ int main()
 
 	clsDate Date4(250 , 2022);
 	Date4.Print();
+
+
+	clsDate Date100(1, 1, 2022);
+	clsDate Date101(1, 5, 2022);
+
+	clsDate Date200(3, 3, 2022);
+	clsDate Date201(10, 5, 2022);
+
+
+	clsPeriod Period1(Date100, Date101);
+	clsPeriod Period2(Date200, Date201);
+
+	cout << "Check OverLap: " << Period1.IsOverLapWith(Period2) << endl;
+	cout << "Check OverLap: " << Period1.IsOverlapPeriods(Period1, Period2) << endl;
+	cout <<"Check OverLap: " << clsPeriod::IsOverlapPeriods(Period1, Period2) << endl;
 
 
 	cout << "Check Leap Year: " << Date1.IsLeapYear() << endl;
